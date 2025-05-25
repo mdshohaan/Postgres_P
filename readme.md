@@ -1,91 +1,57 @@
 # 🧑‍💻 PostgreSQL সম্পর্কে প্রশ্নোত্তর (বাংলা)
 
-This document demonstrates how to use **union** (`|`) and **intersection** (`&`) types in TypeScript.
+# 📘 PostgreSQL Essentials
+
+Welcome to the PostgreSQL Essentials guide! This document summarizes the most fundamental concepts of PostgreSQL in Bengali for quick learning and reference.
 
 ---
 
-## 1. 🔷 Union Type (`|`)
+## 1️⃣ PostgreSQL কী?
 
-> A value that can be **one of multiple types**.
+**PostgreSQL** একটি শক্তিশালী, ওপেন সোর্স রিলেশনাল ডেটাবেস ম্যানেজমেন্ট সিস্টেম (RDBMS)। এটি:
 
-✅ **Example: Union Type**
+- ACID কমপ্লায়েন্ট ✅
+- Extensible 🧩
+- SQL ও NoSQL ডেটা সাপোর্ট করে
+- বড় ও স্কেলযোগ্য প্রজেক্টে ব্যবহারের জন্য উপযুক্ত
 
-```typescript
-function printId(id: number | string) {
-  console.log("ID:", id);
-}
+---
 
-printId(123); // OK: number
-printId("abc123"); // OK: string
+## 2️⃣ Database Schema এর উদ্দেশ্য কী?
+
+**Schema** হচ্ছে ডেটাবেসের মধ্যে একটি লজিকাল গ্রুপ, যা:
+
+- টেবিল, ফাংশন, ভিউ ইত্যাদি অর্গানাইজ করে
+- ইউজার পারমিশন আলাদা রাখতে সাহায্য করে
+
+---
+
+## 3️⃣ Primary Key ও Foreign Key
+
+- **Primary Key:**  
+  প্রতিটি রোকে ইউনিকভাবে চিহ্নিত করে  
+  ❌ Null ও ❌ Duplicate হতে পারে না
+
+- **Foreign Key:**  
+  অন্য টেবিলের Primary Key কে রেফার করে  
+  টেবিলগুলোর মধ্যে সম্পর্ক তৈরি করে
+
+---
+
+## 4️⃣ VARCHAR vs CHAR
+
+| Feature     | CHAR(n)         | VARCHAR(n)                |
+| ----------- | --------------- | ------------------------- |
+| Length      | Fixed           | Variable                  |
+| Space Usage | Full n bytes    | Only necessary space used |
+| Example     | `name CHAR(10)` | `email VARCHAR(50)`       |
+
+---
+
+## 5️⃣ SELECT + WHERE
+
+**WHERE ক্লজ** দিয়ে শর্ত দিয়ে রো নির্বাচন করা যায়।
+
+```sql
+SELECT * FROM users WHERE age > 18;
 ```
-
----
-
-## 2. 🔶 Intersection Type (`&`)
-
-> A value that must satisfy **multiple types at the same time**.
-
-✅ **Example: Intersection Type**
-
-```typescript
-type Person = {
-  name: string;
-};
-
-type Employee = {
-  employeeId: number;
-};
-
-type Staff = Person & Employee;
-
-const john: Staff = {
-  name: "John",
-  employeeId: 101,
-};
-```
-
----
-
-## ✅ Summary
-
-- **Union Type** allows flexibility by accepting values of multiple types.
-- **Intersection Type** ensures that a value must satisfy all combined type conditions.
-
-Use these features to write **type-safe and expressive code** in TypeScript!
-
----
-
-# 🗝️ keyof Keyword in TypeScript
-
-> The `keyof` keyword is used to get a **union of property names** (as string literals) of a given type.
-
-It is helpful when you want to work with dynamic property names in a type-safe way.
-
-✅ **Example: keyof usage**
-
-```typescript
-type Product = {
-  name: string;
-  price: number;
-};
-
-type ProductKeys = keyof Product;
-// Equivalent to: "name" | "price"
-
-function getValue(obj: Product, key: keyof Product): string | number {
-  return obj[key];
-}
-
-const pen: Product = { name: "Pen", price: 10 };
-
-console.log(getValue(pen, "name")); // Output: "Pen"
-console.log(getValue(pen, "price")); // Output: 10
-```
-
----
-
-## ✅ Summary (Updated)
-
-- **Union Type** allows flexibility by accepting values of multiple types.
-- **Intersection Type** ensures that a value must satisfy all combined type conditions.
-- **keyof Keyword** helps extract the keys of a type for safe dynamic access.
