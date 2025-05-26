@@ -1,4 +1,3 @@
-
 -- table 1
 CREATE TABLE rangers (
     ranger_id SERIAL PRIMARY KEY,
@@ -25,11 +24,11 @@ CREATE TABLE species (
 );
 
 INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status) VALUES
-('Red Kangaroo', 'Macropus rufus', '1822-01-01', 'Least Concern'),
-('Axolotl', 'Ambystoma mexicanum', '1863-01-01', 'Critically Endangered'),
-('Saola', 'Pseudoryx nghetinhensis', '1992-05-21', 'Critically Endangered'),
-('Indian Cobra', 'Naja naja', '1758-01-01', 'Least Concern'),
-('Atlantic Puffin', 'Fratercula arctica', '1758-01-01', 'Vulnerable');
+('African Lion', 'Panthera leo', '1758-01-01', 'Vulnerable'),
+('Giant Panda', 'Ailuropoda melanoleuca', '1869-03-11', 'Vulnerable'),
+('Blue Whale', 'Balaenoptera musculus', '1758-01-01', 'Endangered'),
+('Mountain Gorilla', 'Gorilla beringei beringei', '1903-01-01', 'Critically Endangered'),
+('Snowy Owl', 'Bubo scandiacus', '1758-01-01', 'Least Concern');
 
 
 SELECT * FROM species;
@@ -56,7 +55,7 @@ INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VA
 
 SELECT * FROM sightings;
 
------------------  Poblems Solutions  -------------------------------------
+-- Poblems Solutions  -------------
 
 
 -- Poblems No: 1
