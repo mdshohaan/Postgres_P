@@ -46,11 +46,10 @@ CREATE TABLE sightings (
 );
 
 INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VALUES
-(1, 1, 'Desert Edge Trail', '2024-06-14 09:20:00', 'Kangaroo observed hopping alone'),
-(2, 2, 'Lake Xochimilco', '2024-06-15 11:10:00', 'Axolotl seen underwater'),
-(3, 3, 'Annamite Mountains', '2024-06-16 07:55:00', 'Saola briefly visible in dense foliage'),
-(4, 4, 'Cobra Canyon Path', '2024-06-17 14:05:00', 'Cobra basking near rocks'),
-(5, 5, 'Cliffside Nesting Area', '2024-06-18 05:40:00', 'Puffin flying with fish in beak');
+(1, 1, 'Savannah Pass', '2024-06-10 07:30:00', 'Group of lions spotted'),
+(2, 2, 'Bamboo Pass Trail', '2024-06-11 08:45:00', 'One panda resting'),
+(3, 3, 'Ocean Pass', '2024-06-12 10:15:00', 'Whale sighted from drone'),
+(4, 1, 'Mountain Pass Viewpoint', '2024-06-13 06:50:00', 'Family of gorillas near rocks');
 
 
 
